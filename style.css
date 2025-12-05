@@ -1,0 +1,330 @@
+/* --- 1. VARIABLES & THEME (Gruvbox Dark) --- */
+:root {
+    --bg-body: #1d2021;       /* Background Utama */
+    --bg-card: #282828;       /* Background Kartu */
+    --text-main: #ebdbb2;     /* Teks Utama (Cream) */
+    --text-muted: #a89984;    /* Teks Redup (Grey) */
+    --accent: #fe8019;        /* Aksen Oranye */
+    --accent-blue: #83a598;   /* Aksen Biru Pudar */
+    --accent-green: #b8bb26;  /* Aksen Hijau */
+    --border: #3c3836;        /* Warna Garis */
+    --shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+/* --- 2. RESET & BASE STYLES --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: 'JetBrains Mono', monospace; /* Font Khas Programmer */
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; transition: all 0.3s ease; }
+ul { list-style: none; }
+
+/* --- 3. NAVBAR (Sticky & Glass Effect) --- */
+header {
+    position: sticky; top: 0; z-index: 1000;
+    padding: 20px 0;
+    background: rgba(29, 32, 33, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -1px; }
+.logo .accent { color: var(--accent); }
+.cursor { animation: blink 1s infinite; color: var(--accent); }
+@keyframes blink { 50% { opacity: 0; }}
+
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { font-size: 14px; color: var(--text-muted); position: relative; }
+.nav-links a:hover { color: var(--text-main); }
+.nav-links a .hash { color: var(--accent-blue); margin-right: 2px; }
+
+/* --- 4. HERO SECTION --- */
+.hero-section {
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: 90vh; padding: 80px 0; gap: 50px;
+}
+
+.hero-content { flex: 1; }
+.code-comment { color: var(--text-muted); font-style: italic; margin-bottom: 15px; display: block; }
+
+.hero-content h1 {
+    font-size: 48px; line-height: 1.1; margin-bottom: 15px; color: var(--text-main);
+}
+.text-highlight { color: var(--accent); position: relative; }
+
+.hero-content h2 {
+    font-size: 20px; font-weight: 400; color: var(--accent-blue); margin-bottom: 25px;
+}
+
+.bio {
+    color: var(--text-muted); max-width: 550px; margin-bottom: 40px; font-size: 16px;
+}
+.bio span { color: var(--text-main); font-weight: 700; }
+
+/* Buttons */
+.btn-group { display: flex; gap: 15px; margin-bottom: 40px; }
+.btn {
+    padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+}
+.btn-primary {
+    background: var(--accent); color: var(--bg-body); border: 2px solid var(--accent);
+}
+.btn-primary:hover {
+    background: transparent; color: var(--accent); transform: translateY(-3px);
+}
+.btn-outline {
+    background: transparent; color: var(--text-main); border: 2px solid var(--text-muted);
+}
+.btn-outline:hover {
+    border-color: var(--accent); color: var(--accent); transform: translateY(-3px);
+}
+
+/* Social Icons */
+.social-mini { display: flex; gap: 20px; }
+.social-mini a {
+    font-size: 22px; color: var(--text-muted);
+}
+.social-mini a:hover { color: var(--accent); transform: scale(1.1); }
+
+/* Profile Image */
+.hero-image-box { position: relative; width: 320px; height: 320px; flex-shrink: 0; }
+.profile-img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--bg-card);
+    outline: 2px dashed var(--accent);
+    outline-offset: 5px;
+    position: relative; z-index: 2;
+    transition: transform 0.5s;
+}
+.hero-image-box:hover .profile-img { transform: scale(1.02); }
+.image-blob {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--accent); opacity: 0.15; filter: blur(60px); border-radius: 50%; z-index: 1;
+}
+
+/* --- 5. COMMON SECTIONS --- */
+.section-spacer { padding: 100px 0; }
+.section-title {
+    font-size: 32px; margin-bottom: 50px;
+    padding-bottom: 15px; border-bottom: 1px dashed var(--border);
+    display: inline-block; color: var(--text-main);
+}
+.section-title .hash { color: var(--accent); }
+
+/* --- 6. GRID LAYOUTS (Features & Skills) --- */
+.skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+}
+.skill-card {
+    background: var(--bg-card); padding: 30px; border-radius: 12px;
+    border: 1px solid var(--border); transition: 0.3s;
+}
+.skill-card:hover {
+    border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow);
+}
+.skill-header {
+    font-size: 18px; font-weight: 700; margin-bottom: 15px;
+    display: flex; align-items: center; gap: 10px; color: var(--text-main);
+}
+.skill-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; min-height: 60px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-tags span {
+    font-size: 12px; background: rgba(255,255,255,0.05); padding: 5px 10px;
+    border-radius: 4px; color: var(--accent-blue); border: 1px solid var(--border);
+}
+
+/* --- 7. PORTFOLIO / PROJECTS --- */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.project-item {
+    background: var(--bg-card); border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border); transition: 0.3s; display: flex; flex-direction: column;
+}
+.project-item:hover {
+    border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow);
+}
+.top-bar {
+    background: rgba(0,0,0,0.2); padding: 12px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+.dots span {
+    height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-right: 6px;
+}
+.dots span:nth-child(1) { background: #ff5f56; }
+.dots span:nth-child(2) { background: #ffbd2e; }
+.dots span:nth-child(3) { background: #27c93f; }
+
+.top-bar .links a { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+.top-bar .links a:hover { color: var(--accent); }
+
+.project-content { padding: 30px; flex: 1; display: flex; flex-direction: column; }
+.project-content h4 { font-size: 20px; color: var(--text-main); margin-bottom: 10px; }
+.project-content p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; flex: 1; }
+.tech-stack { display: flex; gap: 10px; font-size: 12px; color: var(--accent-blue); margin-top: auto; }
+.tech-stack li::before { content: '#'; color: var(--border); margin-right: 2px; }
+
+/* --- 8. RESUME SECTION --- */
+.resume-container {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+.resume-block {
+    position: relative; padding-left: 20px; border-left: 2px solid var(--border);
+}
+.resume-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 25px;
+}
+.resume-header i { font-size: 24px; color: var(--accent); }
+.resume-header h4 { font-size: 22px; color: var(--text-main); }
+
+.resume-item {
+    background: var(--bg-card); padding: 20px; border-radius: 8px;
+    border: 1px solid var(--border); margin-bottom: 20px;
+}
+.resume-item .year {
+    font-size: 12px; color: var(--accent); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;
+}
+.resume-item h5 { font-size: 18px; margin-bottom: 5px; }
+.resume-item p { font-size: 14px; color: var(--text-muted); }
+
+/* --- 9. CONTACT SECTION --- */
+.contact-box {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 50px; text-align: center;
+}
+.contact-text { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; }
+.contact-text strong { color: var(--accent-green); }
+
+.contact-grid {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+}
+.contact-card {
+    background: rgba(255,255,255,0.03); padding: 15px 30px; border-radius: 50px;
+    border: 1px solid var(--border); display: flex; align-items: center; gap: 10px;
+    color: var(--text-main); font-size: 16px;
+}
+.contact-card:hover {
+    border-color: var(--accent); background: rgba(254, 128, 25, 0.1);
+}
+.contact-card i { color: var(--accent); }
+
+/* --- 10. FOOTER --- */
+footer {
+    text-align: center; padding: 40px 0; border-top: 1px solid var(--border);
+    margin-top: 80px; color: var(--text-muted); font-size: 14px;
+}
+.copyright { opacity: 0.6; font-size: 12px; margin-top: 5px; }
+
+/* --- 11. RESPONSIVE --- */
+@media (max-width: 900px) {
+    .resume-container { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Bisa ditambah JS toggle menu jika mau */
+    .hero-section { flex-direction: column-reverse; text-align: center; padding-top: 40px; }
+    .btn-group { justify-content: center; }
+    .hero-image-box { width: 250px; height: 250px; }
+    .bio { margin: 0 auto 30px; }
+    .contact-grid { flex-direction: column; }
+    .hero-content h1 { font-size: 32px; }
+}
+/* --- NEW HERO STYLES --- */
+
+/* 1. Status Pill (Tombol Status Lonjong) */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: rgba(184, 187, 38, 0.1); /* Warna background hijau transparan */
+    border: 1px solid rgba(184, 187, 38, 0.3);
+    border-radius: 50px;
+    color: #b8bb26; /* Warna Hijau Gruvbox */
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+/* Titik Berdenyut (Glowing Dot) */
+.dot-pulse {
+    width: 8px; height: 8px;
+    background-color: #b8bb26;
+    border-radius: 50%;
+    position: relative;
+}
+.dot-pulse::after {
+    content: '';
+    position: absolute; top: -4px; left: -4px;
+    width: 16px; height: 16px;
+    background-color: rgba(184, 187, 38, 0.5);
+    border-radius: 50%;
+    animation: pulse-animation 2s infinite;
+    z-index: 0;
+}
+@keyframes pulse-animation {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+/* 2. Text Gradient (Nama Warna-Warni Elegan) */
+.text-gradient {
+    background: linear-gradient(90deg, #fe8019, #fabd2f); /* Oranye ke Kuning */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* 3. Lambaian Tangan Animasi */
+.wave {
+    display: inline-block;
+    animation: wave-animation 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }
+    100% { transform: rotate( 0.0deg) }
+}
+
+/* 4. Highlight di Deskripsi */
+.code-highlight {
+    color: #83a598; /* Biru muda */
+    font-weight: 600;
+    background: rgba(131, 165, 152, 0.1);
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.quote {
+    display: block;
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--text-muted);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+}

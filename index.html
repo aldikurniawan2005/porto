@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.profile | Aldi Kurniawan</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span class="accent">~/</span>aldi_kurniawan<span class="cursor">_</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home"><span class="hash">#</span>home</a>
+                <a href="#features"><span class="hash">#</span>skills</a>
+                <a href="#portfolio"><span class="hash">#</span>projects</a>
+                <a href="#resume"><span class="hash">#</span>resume</a>
+                <a href="#contact"><span class="hash">#</span>contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="status-pill">
+                    <span class="dot-pulse"></span>
+                    <span>Open for Internship</span>
+                </div>
+
+                <h1>Hi, I'm <span class="text-gradient">Aldi Kurniawan Tampubolon</span> <span class="wave">👋</span></h1>
+
+                <h2>AI & IoT System Developer</h2>
+
+                <p class="bio">
+                    Mengembangkan solusi berbasis <span class="code-highlight">Artificial Intelligence</span> dan <span
+                        class="code-highlight">IoT Engineering</span>.
+                    Berpengalaman membangun aplikasi mobile & web untuk sistem absensi dan otomasi data real-time menggunakan <b>Face Recognition</b>, <b>MQTT</b>, dan <b>Cloud Server</b>.
+                    <br><span class="quote">"Solusi cerdas untuk sistem yang lebih efisien."</span>
+                </p>
+
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="far fa-handshake"></i> Let's Connect
+                    </a>
+                    <a href="#resume" class="btn btn-outline">
+                        <i class="far fa-file-alt"></i> View Resume
+                    </a>
+                </div>
+
+                <div class="social-mini">
+                    <a href="mailto:alditampubolon054@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/6287885490660"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-image-box">
+                <img src="WhatsApp Image 2025-12-05 at 08.59.18.jpeg"
+                    alt="Aldi Kurniawan" class="profile-img">
+                <div class="image-blob"></div>
+            </div>
+        </section>
+
+        <section id="features" class="section-spacer">
+            <h3 class="section-title"><span class="hash">##</span> What_I_Do</h3>
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-header"><i class="fas fa-brain accent"></i> AI & Face Recognition</div>
+                    <p class="skill-desc">Pengembangan sistem deteksi dan identifikasi wajah untuk absensi otomatis dan
+                        akses kontrol berbasis AI di perangkat mobile dan server.</p>
+                    <div class="skill-tags">
+                        <span>DeepFace</span><span>Computer Vision</span><span>Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header"><i class="fas fa-microchip accent"></i> IoT System Integration</div>
+                    <p class="skill-desc">Integrasi perangkat IoT (ESP32/ESP8266) dengan server menggunakan MQTT dan
+                        dashboard Node-RED untuk monitoring real-time.</p>
+                    <div class="skill-tags">
+                        <span>MQTT</span><span>Node-RED</span><span>ESP32</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header"><i class="fas fa-cloud accent"></i> Cloud & Backend</div>
+                    <p class="skill-desc">Pengembangan backend menggunakan Flask & PHP, deployment API, dan manajemen
+                        data realtime dengan Database MySQL & Firebase.</p>
+                    <div class="skill-tags">
+                        <span>Flask</span><span>PHP</span><span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section-spacer">
+            <h3 class="section-title"><span class="hash">##</span> Selected_Projects</h3>
+            <div class="projects-grid">
+
+                <article class="project-item">
+                    <div class="top-bar">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <div class="links"><a href="#"><i class="fab fa-github"></i> Source</a></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Smart Campus Face Recognition</h4>
+                        <p>Sistem absensi dan log keluar-masuk kampus berbasis deteksi wajah real-time terhubung
+                            ke aplikasi mobile dan web server.</p>
+                        <ul class="tech-stack">
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>DeepFace</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-item">
+                    <div class="top-bar">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <div class="links"><a href="#"><i class="fab fa-github"></i> Source</a></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Solar Panel Tracker</h4>
+                        <p>Prototipe IoT untuk pelacakan posisi matahari otomatis guna meningkatkan efisiensi panel
+                            surya berbasis Arduino.</p>
+                        <ul class="tech-stack">
+                            <li>C++</li>
+                            <li>Servo</li>
+                            <li>Sensors</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-item">
+                    <div class="top-bar">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <div class="links"><a href="#"><i class="fab fa-github"></i> Source</a></div>
+                    </div>
+                    <div class="project-content">
+                        <h4>Mobile IoT Configuration App</h4>
+                        <p>Aplikasi mobile Flutter untuk konfigurasi perangkat IoT secara wireless menggunakan modul
+                            ESP32 custom.</p>
+                        <ul class="tech-stack">
+                            <li>Flutter</li>
+                            <li>Dart</li>
+                            <li>ESP32</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="resume" class="section-spacer">
+            <h3 class="section-title"><span class="hash">##</span> My_Resume</h3>
+            <div class="resume-container">
+                <div class="resume-column">
+                    <div class="resume-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Education</h4>
+                    </div>
+                    <div class="resume-block">
+                        <div class="resume-item">
+                            <span class="year">2023 - Present</span>
+                            <h5>Institut Teknologi Del</h5>
+                            <p>D3 Teknologi Komputer. Fokus pada AI, IoT, dan Web Development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-column">
+                    <div class="resume-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Experience</h4>
+                    </div>
+                    <div class="resume-block">
+                        <div class="resume-item">
+                            <span class="year">Current Status</span>
+                            <h5>Open for Internship</h5>
+                            <p>Siap mengikuti program magang 6 bulan dan berkontribusi dalam pengembangan sistem AI &
+                                IoT berbasis mobile dan cloud.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-spacer">
+            <h3 class="section-title"><span class="hash">##</span> Contact_Me</h3>
+            <div class="contact-box">
+                <p class="contact-text">
+                    I am currently available for a <strong>6 Month Internship</strong>.<br>
+                    Let's discuss how I can contribute to your team.
+                </p>
+
+                <div class="contact-grid">
+                    <a href="https://wa.me/6287885490660" class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+62 878-8549-0660</span>
+                    </a>
+                    <a href="mailto:alditampubolon054@gmail.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span>alditampubolon054@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; Aldi Kurniawan 2024.</p>
+        <p class="copyright">git commit -m "Ready to collaborate"</p>
+    </footer>
+
+</body>
+
+</html>
